@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <h1>Login form</h1>
+
+        Email <br><input type="text" id="email"><br><br>
+        Password <br><input type="password" id="Password"><br><br>
+        <div class="button"><button id="login">Login</button></div>
+        <p>Don't have an account:-<a href="signUp.html">Sign up</a></p>
+    </form>
+</body>
+<script>
+    let login = document.getElementById("login")
+
+let arr = JSON.parse(localStorage.getItem("user")) || [];
+function loginUser(){
+ let obj = {
+       email:document.getElementById("email").value,
+       password:document.getElementById("Password").value
+ }
+ if(obj.email=="" || obj.password==""){
+     alert("Please fill all the fields");
+     return
+ }
+ let value= arr.find((user) =>
+ user.email===obj.email && user.password===obj.password
+);
+if(value){
+ alert("Login Successful")
+ let loggedInEmail = localStorage.setItem("loggedInEmail",obj.email)
+ window.location.href="home.html";
+ }else{
+     alert("Login Failed");
+}
+}
+
+ login.addEventListener("click",(e) =>{
+     e.preventDefault();
+     loginUser();
+
+ });
+</script>
+</html>

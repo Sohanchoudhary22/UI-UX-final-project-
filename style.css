@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#form{
+    border: 1px solid gray;
+    border-radius: 7px;
+    width:30% ;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    padding: 20px;
+    height:auto;
+    font-size: 22px;
+    background-color: rgb(232, 240, 247);
+}
+h1{
+    text-align: center;
+}
+input{
+    width:95%;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.button,p{
+    text-align: center;
+}
+#login,#submit{
+    width:20%;
+    margin: auto;
+    height: 35px;
+    border-radius: 10px;
+    background-color: rgb(152, 216, 237);
+    font-size: 18px;
+}
+#submit{
+    width: 25%;
+    background-color: rgb(21, 122, 222);
+    color: white;
+}

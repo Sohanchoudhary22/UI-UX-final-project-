@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <h1>Sign Up</h1>
+        Name <br><input type="text" id="name" placeholder="enter your name"><br><br>
+        Email <br><input type="email" id="email" placeholder="enter your email"><br><br>
+        Password <br><input type="password" id="password" placeholder="enter your password"><br><br>
+        Mobile <br><input type="mobile" id="mobile" placeholder="enter your Number"><br><br>
+        <div class="button"><button type="submit" id="submit">Submit</button></div>
+        <p>Already have an account: <a href="index.html">Login here</a></p>
+    </form>
+</body>
+<script>
+    let arr = []
+    let form = document.getElementById("form")
+    let name = document.getElementById("name")
+    let email = document.getElementById("email")
+    let password = document.getElementById("password")
+    let mobile = document.getElementById("mobile")
+    let submit = document.getElementById("submit")
+    submit.addEventListener( "click",(e) =>{
+        e.preventDefault()
+        let obj = {
+            name:document.getElementById("name").value,
+            email:document.getElementById("email").value,
+            password:document.getElementById("password").value,
+            mobile:document.getElementById("mobile").value
+        }
+        if(obj.name==="" || obj.email==="" || obj.password==="" || obj.mobile===""){
+            alert("Please fill all the fields")
+            return
+        }
+        arr.push(obj)
+        localStorage.setItem("user", JSON.stringify(arr))
+        alert("Register sucessfull")
+        form.reset();
+    });
+</script>
+</html>
