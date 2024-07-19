@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="main_container">
+    <nav>
+        <div class="logo">
+            <img src="./image/logo.jpg" alt="logo">
+        </div>
+        <div class="link">
+            <a href="">Home</a>
+            <a href="">About Us</a>
+            <a href="">Service</a>
+            <a href="./index.html">Login</a>
+            <a href="./signUp.html">Sign up</a>
+        </div>
+        <div class="userDetail">
+            <img src="./image/user logo.png" alt="user">
+        <div id="useremail" class="nav_email">user</div>
+    </nav>
+
+    <div class="hero_section">
+        <p>I'm SOHAN LAL <br><p1>A Full Stack Developer</p1> <br>& UI/UX Designer</p> 
+    </div>
+
+    <div id="api_section">
+        <h1>Api Section</h1>
+        <div id="cart"></div>
+    </div>
+
+    <div class="contact_section">
+       <div class="aside_img">
+           <img src="./image/aside_img.jpg" alt="aside_img">
+       </div>
+       <div class="contact_form">
+        <form>
+            <h2>Contact Us</h2>
+            Name<br><input type="text"><br><br>
+            Email<br><input type="email"><br><br>
+            Contact Number<br><input type="text"><br><br>
+            Message<br><input type="text" id="message"><br><br>
+             <div id="button"><button>submit</button></div>
+        </form>
+       </div>
+    </div>
+
+  <footer>
+        <div>
+            <h3>Company</h3>
+            <hr>
+            <a href="">About Us</a>
+            <a href="">Our Services</a>
+            <a href="">Privacy policy</a>
+            <a href="">Shipping</a>
+        </div>
+        <div>
+            <h3>Get Help</h3>
+            <hr>
+            <a href="">FAX</a>
+            <a href="">Order Status</a>
+            <a href="">Returns</a>
+            <a href="">Payment Options</a>
+        </div>
+        <div>
+            <h3>Online Shop</h3>
+            <hr>
+            <a href="">Watch</a>
+            <a href="">Bag</a>
+            <a href="">Shoes</a>
+            <a href="">Dress</a>
+        </div>
+        
+        <div>
+            <h3>Follow Us</h3>
+            <hr>
+          <div class="account_link">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+          </div>
+            <p>Copyright &copy;2024;Designed by SOHAN LAL. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+</body>
+<script>
+    const loggedInEmail = localStorage.getItem("loggedInEmail") || [];
+    if(loggedInEmail){
+        const users = JSON.parse(localStorage.getItem("user")) ||[];
+        const user = users.find((user)=> user.email === loggedInEmail);
+    
+        if(user) {
+            document.getElementById("useremail").innerText= user.name;
+        }
+    }else{
+        window.location.href="index.html";
+    }
+
+//.................API call section.....................//
+    let arr= []
+     let cont= document.getElementById("api_section")
+     async function getApi(){
+        try{
+            let res = await axios.get("https://fakestoreapi.com/products")
+            console.log(res.data)
+            arr = res.data
+            displayData()
+            }catch(err){
+                console.log(err.message)
+        }
+    }
+    getApi()
+
+    function displayData() {
+        cart.innerHTML = ""
+        arr.forEach((ele) => {
+             let cart = document.getElementById("cart")
+             let div = document.createElement("div")
+             let img = document.createElement("img");
+             img.src = ele.image;
+             let h3 = document.createElement("h3");
+             h3.innerText = ele.title;
+             let h2 = document.createElement("h2");
+             h2.innerText = `price.${ele.price}$`;
+             h2.style.marginBottom="50px"
+             let p = document.createElement("p");
+             p.innerText = ele.description;
+             let button = document.createElement("btn");
+             button.innerText = "Add to cart";
+             button.style.backgroundColor="green"
+             button.style.color="white"
+             button.style.padding="10px"
+             button.style.margin="10px"
+             button.style.borderRadius="10px"
+             
+
+             let button1 = document.createElement("btn1")
+             button1.innerText = "Buy"
+             button1.style.backgroundColor="red"
+             button1.style.color="white"
+             button1.style.padding="10px 30px"
+             button1.style.margin="30px"
+             button1.style.borderRadius="10px"
+            
+
+             div.append(img,h3,p,h2,button,button1)
+             cart.append(div)
+             api_section.append(cart)
+        })
+    }
+    displayData()
+</script>
+</html>
