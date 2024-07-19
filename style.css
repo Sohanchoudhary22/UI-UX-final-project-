@@ -88,21 +88,21 @@ nav{
 .hero_section{
      border: 1px solid rgb(180, 180, 81);
      width: 100%;
-     height: 300px;
+     height: 500px;
      background-image: url(https://media.istockphoto.com/id/1843806205/photo/businessman-analyzing-data-driven-growth-goals-and-company-performance-utilizing-artificial.jpg?s=612x612&w=0&k=20&c=aM0UA1081yZitR95VPjVNesNTnmivAmANR5v64Gb51A=);
         background-repeat: no-repeat;
         background-size: cover;
 }
 .hero_section p{
      width:25%;
-     margin:100px;
+     margin:102px;
      font-size: 25px;
-     font-weight: bold;
-     margin-left:300px;
+     font-weight:18px;
+     margin-left:320px;
      color: white;  
 } 
 p1{
-    color:rgb(11, 244, 236);
+    color:rgb(11, 221, 244);
 }
 
 /*.................api......................*/
@@ -220,7 +220,7 @@ footer div p{
 }
 
 
-/* 
+
 @media screen and (min-width:150px) and (max-width:420px) {
     #form{
         width:80%;
@@ -237,9 +237,10 @@ footer div p{
     input{
         font-size:16px;
     }
-} */
-/*...............Home page..............*/
-nav{
+}
+/*............................Home page...............................*/
+
+ /* nav{
     height: 100px;
 }
 .logo{
@@ -247,7 +248,7 @@ nav{
     margin-left: 25px;
 }
 .logo img{
-    height: 80px;
+    height:80px;
 }
 .link{
    display: none; 
@@ -255,20 +256,20 @@ nav{
 .userDetail{
     width: 50%;
     font-size: 25px;
-}
+} 
 
-.hero_section{
+ .hero_section{
     width:100%;
-    height: 200px;
+    height: 160px;
 }
 .hero_section p{
     width: 50%;
     margin: 50px;
     margin-left: 10px;
     font-size: 20px;
-}
+} 
 
-#cart{
+ #cart{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     font-size: 16px;
@@ -309,9 +310,10 @@ footer{
 }
 footer div{
     width:100%;
-}
+}  */
 
-/* @media screen and (min-width:420px) and (max-width:620px) {
+
+ @media screen and (min-width:420px) and (max-width:820px) {
     #form{
         width:70%;
         margin-top:100px;
@@ -329,10 +331,11 @@ footer div{
         height: 50px;
         font-size:22px;
     }
-}
+} 
 
+/*............................Home page...............................*/
 
-nav{
+/* nav{
     height: 100px;
 }
 .logo{
