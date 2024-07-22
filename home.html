@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -18,8 +18,8 @@
             <a href="">Home</a>
             <a href="">About Us</a>
             <a href="">Service</a>
-            <a href="./index.html">Login</a>
             <a href="./signUp.html">Sign up</a>
+            <a href="./index.html">Logout</a>
         </div>
         <div class="userDetail">
             <img src="./image/user logo.png" alt="user">
@@ -42,52 +42,30 @@
        <div class="contact_form">
         <form>
             <h2>Contact Us</h2>
-            Name<br><input type="text"><br><br>
-            Email<br><input type="email"><br><br>
-            Contact Number<br><input type="text"><br><br>
-            Message<br><input type="text" id="message"><br><br>
+            <input type="text" placeholder="Name"><br><br>
+            <input type="email" placeholder="Email"><br><br>
+            <input type="text" placeholder="Contact Number"><br><br>
+            <input type="text" id="message" placeholder="Message"><br><br>
              <div id="button"><button>submit</button></div>
         </form>
        </div>
     </div>
 
-  <footer>
-        <div>
-            <h3>Company</h3>
-            <hr>
-            <a href="">About Us</a>
-            <a href="">Our Services</a>
-            <a href="">Privacy policy</a>
-            <a href="">Shipping</a>
-        </div>
-        <div>
-            <h3>Get Help</h3>
-            <hr>
-            <a href="">FAX</a>
-            <a href="">Order Status</a>
-            <a href="">Returns</a>
-            <a href="">Payment Options</a>
-        </div>
-        <div>
-            <h3>Online Shop</h3>
-            <hr>
-            <a href="">Watch</a>
-            <a href="">Bag</a>
-            <a href="">Shoes</a>
-            <a href="">Dress</a>
-        </div>
-        
-        <div>
-            <h3>Follow Us</h3>
-            <hr>
+  <footer>    
           <div class="account_link">
             <a href=""><i class="fa-brands fa-facebook"></i></a>
             <a href=""><i class="fa-brands fa-twitter"></i></a>
             <a href=""><i class="fa-brands fa-instagram"></i></a>
             <a href=""><i class="fa-brands fa-youtube"></i></a>
           </div>
+          <div class="footer_link">
+            <a href="">About Us</a>
+            <a href="">Our Services</a>
+            <a href="">Privacy policy</a>
+            <a href="">Shipping</a>
+          </div>
             <p>Copyright &copy;2024;Designed by SOHAN LAL. All rights reserved.</p>
-        </div>
+        
     </footer>
 </div>
 </body>
@@ -118,11 +96,11 @@
         }
     }
     getApi()
+    let cart = document.getElementById("cart")
 
     function displayData() {
         cart.innerHTML = ""
         arr.forEach((ele) => {
-             let cart = document.getElementById("cart")
              let div = document.createElement("div")
              let img = document.createElement("img");
              img.src = ele.image;
@@ -130,30 +108,20 @@
              h3.innerText = ele.title;
              let h2 = document.createElement("h2");
              h2.innerText = `price.${ele.price}$`;
-             h2.style.marginBottom="50px"
              let p = document.createElement("p");
              p.innerText = ele.description;
-             let button = document.createElement("btn");
-             button.innerText = "Add to cart";
-             button.style.backgroundColor="green"
-             button.style.color="white"
-             button.style.padding="10px"
-             button.style.margin="10px"
-             button.style.borderRadius="10px"
-             
+             let add = document.createElement("button");
+               add.innerText = "Add to cart";
+               add.id = "add"
 
-             let button1 = document.createElement("btn1")
-             button1.innerText = "Buy"
-             button1.style.backgroundColor="red"
-             button1.style.color="white"
-             button1.style.padding="10px 30px"
-             button1.style.margin="30px"
-             button1.style.borderRadius="10px"
+             let buy = document.createElement("button");
+                buy.innerText = "Buy";
+                buy.id = "Buy"
             
 
-             div.append(img,h3,p,h2,button,button1)
+             div.append(img,h2,h3,p,add,buy)
              cart.append(div)
-             api_section.append(cart)
+             
         })
     }
     displayData()
