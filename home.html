@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 </head>
 <body>
     <div class="main_container">
@@ -26,20 +29,20 @@
         <div id="useremail" class="nav_email">user</div>
     </nav>
 
-    <div class="hero_section">
+    <div class="hero_section" data-aos="zoom-in-up" duration="10000">
         <p>I'm SOHAN LAL <br><p1>A Full Stack Developer</p1> <br>& UI/UX Designer</p> 
     </div>
 
-    <div id="api_section">
+    <div id="api_section" data-aos="zoom-in-up" duration="10000">
         <h1>Api Section</h1>
-        <div id="cart"></div>
+        <div id="cart" data-aos="zoom-in-up" duration="10000"></div>
     </div>
 
     <div class="contact_section">
        <div class="aside_img">
            <img src="./image/aside_img.jpg" alt="aside_img">
        </div>
-       <div class="contact_form">
+       <div class="contact_form" data-aos="flip-up" duration="10000">
         <form>
             <h2>Contact Us</h2>
             <input type="text" placeholder="Name"><br><br>
@@ -69,6 +72,9 @@
     </footer>
 </div>
 </body>
+<script>
+    AOS.init();
+  </script>
 <script>
     const loggedInEmail = localStorage.getItem("loggedInEmail") || [];
     if(loggedInEmail){

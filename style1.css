@@ -6,6 +6,8 @@ body{
 .main_container{
     width: 99%;
     margin: auto;
+    background-image: 
+       linear-gradient(rgb(195, 234, 247),rgb(162, 127, 231),rgb(162, 107, 116));
 }
 
 nav{
@@ -14,7 +16,10 @@ nav{
     display: flex;
     justify-content: space-around;
     height:70px ;
-    background-color: rgb(221, 233, 252);
+    background-color: rgb(211, 227, 252);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
         
 }
 .logo{
@@ -80,6 +85,7 @@ p1{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    padding: 8px;
 }
 #cart div{
     text-align: center;
@@ -238,7 +244,7 @@ footer p{
 .hero_section p{
     width: 50%;
     margin: 50px;
-    margin-left: 10px;
+    margin-left: 40px;
     font-size: 20px;
 } 
 
@@ -278,6 +284,7 @@ footer p{
 }
 .contact_form input{
     height: 40px;
+    font-size: 18px;
 }
 button{
     width:35%;
@@ -323,7 +330,7 @@ nav{
 }
 .userDetail{
     width:15%;
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .hero_section{
@@ -333,8 +340,8 @@ nav{
 .hero_section p{
     width: 50%;
     margin: 50px;
-    margin-left: 50px;
-    font-size: 20px;
+    margin-left: 90px;
+    font-size: 23px;
 }
 #cart{
     display: grid;
